@@ -1,0 +1,30 @@
+# Important Notes:
+# Every field you add must be added to the root build.gradle expandProps map.
+
+# Project
+version=${BUILD_COORDS.version}
+group=${BUILD_COORDS.groupId}
+java_version=17
+deimos_version=1
+
+# Common
+mod_name=${MOD_NAME}
+mod_author=${AUTHORS}
+mod_id=${MOD_ID}
+license=${LICENSE.id}
+homepage=${WEBSITE}
+description=${DESCRIPTION}
+minecraft_version=1.20.4
+modmenu_version=9.0.0
+minecraft_version_range=[1.20.3, 1.21)
+# Fabric
+fabric_version=0.97.2+1.20.4
+fabric_loader_version=0.16.9
+# Forge
+forge_version=49.0.19
+forge_loader_version_range=[49,)
+forge_version_range=[49,)
+
+# Gradle
+org.gradle.jvmargs=-Xmx3G
+org.gradle.daemon=false
