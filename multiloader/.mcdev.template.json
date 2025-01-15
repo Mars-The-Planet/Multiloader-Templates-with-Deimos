@@ -1,0 +1,257 @@
+{
+  "version": 1,
+  "group": "mod",
+  "properties": [
+    {
+      "name": "BUILD_COORDS",
+      "type": "build_system_coordinates",
+      "order": 10
+    },
+    {
+      "name": "MC_VERSION",
+      "type": "semantic_version",
+      "options": [
+        "1.21"
+      ]
+    },
+    {
+      "name": "MOD_ID",
+      "type": "string",
+      "validator": "[a-z][a-z0-9-_]{1,63}",
+      "derives": {
+        "parents": ["PROJECT_NAME"],
+        "method": "replace",
+        "parameters": {
+          "regex": "[^a-z0-9-_]+",
+          "replacement": "_",
+          "maxLength": 64,
+          "lowercase": true
+        }
+      }
+    },
+    {
+      "name": "MOD_NAME",
+      "type": "string",
+      "inheritFrom": "PROJECT_NAME"
+    },
+    {
+      "name": "MAIN_CLASS",
+      "type": "class_fqn",
+      "derives": {
+        "parents": ["BUILD_COORDS", "MOD_ID"],
+        "method": "suggestClassName"
+      }
+    },
+    {
+      "name": "LICENSE",
+      "type": "license"
+    },
+    {
+      "label": "creator.ui.optional_settings.label",
+      "collapsible": true,
+      "groupProperties": [
+        {
+          "name": "DESCRIPTION",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "AUTHORS",
+          "type": "inline_string_list",
+          "default": ""
+        },
+        {
+          "name": "WEBSITE",
+          "type": "string",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "name": "JAVA_VERSION",
+      "type": "integer",
+      "order": 20,
+      "default": 17,
+      "visible": false,
+      "derives": {
+        "parents": ["MC_VERSION"],
+        "method": "recommendJavaVersionForMcVersion",
+        "default": 17
+      }
+    },
+    {
+      "name": "JDK",
+      "type": "jdk",
+      "order": 20,
+      "default": "JAVA_VERSION"
+    }
+  ],
+  "files": [
+    {
+      "template": "../Gradle.gitignore.ft",
+      "destination": ".gitignore",
+      "condition": "$USE_GIT"
+    },
+    {
+      "template": "../gradle-wrapper.properties.ft",
+      "destination": "gradle/wrapper/gradle-wrapper.properties"
+    },
+    {
+      "template": "../licenses/${LICENSE.id}.txt.ft",
+      "destination": "LICENSE.txt"
+    },
+    {
+      "template": "build.gradle.ft",
+      "destination": "build.gradle"
+    },
+    {
+      "template": "settings.gradle.ft",
+      "destination": "settings.gradle"
+    },
+    {
+      "template": "${MC_VERSION} gradle.properties.ft",
+      "destination": "gradle.properties"
+    },
+    {
+      "template": "buildSrc/build.gradle.ft",
+      "destination": "buildSrc/build.gradle"
+    },
+    {
+      "template": "buildSrc/multiloader-common.gradle.ft",
+      "destination": "buildSrc/src/main/groovy/multiloader-common.gradle"
+    },
+    {
+      "template": "buildSrc/multiloader-loader.gradle.ft",
+      "destination": "buildSrc/src/main/groovy/multiloader-loader.gradle"
+    },
+    {
+      "template": "common/build.gradle.ft",
+      "destination": "common/build.gradle"
+    },
+    {
+      "template": "common/MixinMinecraft.java.ft",
+      "destination": "common/src/main/java/${MAIN_CLASS.packagePath}/mixin/MixinMinecraft.java"
+    },
+    {
+      "template": "common/IPlatformHelper.java.ft",
+      "destination": "common/src/main/java/${MAIN_CLASS.packagePath}/platform/services/IPlatformHelper.java"
+    },
+    {
+      "template": "common/Services.java.ft",
+      "destination": "common/src/main/java/${MAIN_CLASS.packagePath}/platform/Services.java"
+    },
+    {
+      "template": "common/CommonClass.java.ft",
+      "destination": "common/src/main/java/${MAIN_CLASS.packagePath}/CommonClass.java"
+    },
+    {
+      "template": "common/Constants.java.ft",
+      "destination": "common/src/main/java/${MAIN_CLASS.packagePath}/Constants.java"
+    },
+    {
+      "template": "common/mixins.json.ft",
+      "destination": "common/src/main/resources/${MOD_ID}.mixins.json"
+    },
+    {
+      "template": "common/pack.mcmeta.ft",
+      "destination": "common/src/main/resources/pack.mcmeta"
+    },
+    {
+      "template": "fabric/build.gradle.ft",
+      "destination": "fabric/build.gradle"
+    },
+    {
+      "template": "fabric/ExampleMod.java.ft",
+      "destination": "fabric/src/main/java/${MAIN_CLASS.path}.java"
+    },
+    {
+      "template": "fabric/FabricPlatformHelper.java.ft",
+      "destination": "fabric/src/main/java/${MAIN_CLASS.packagePath}/platform/FabricPlatformHelper.java"
+    },
+    {
+      "template": "fabric/MixinTitleScreen.java.ft",
+      "destination": "fabric/src/main/java/${MAIN_CLASS.packagePath}/mixin/MixinTitleScreen.java"
+    },
+    {
+      "template": "fabric/service.IPlatformHelper.ft",
+      "destination": "fabric/src/main/resources/META-INF/services/${MAIN_CLASS.packageName}.platform.services.IPlatformHelper"
+    },
+    {
+      "template": "fabric/fabric.mixins.json.ft",
+      "destination": "fabric/src/main/resources/${MOD_ID}.fabric.mixins.json"
+    },
+    {
+      "template": "fabric/fabric.mod.json.ft",
+      "destination": "fabric/src/main/resources/fabric.mod.json"
+    },
+    {
+      "template": "forge/build.gradle.ft",
+      "destination": "forge/build.gradle"
+    },
+    {
+      "template": "forge/ExampleMod.java.ft",
+      "destination": "forge/src/main/java/${MAIN_CLASS.path}.java"
+    },
+    {
+      "template": "forge/ForgePlatformHelper.java.ft",
+      "destination": "forge/src/main/java/${MAIN_CLASS.packagePath}/platform/ForgePlatformHelper.java"
+    },
+    {
+      "template": "forge/MixinTitleScreen.java.ft",
+      "destination": "forge/src/main/java/${MAIN_CLASS.packagePath}/mixin/MixinTitleScreen.java"
+    },
+    {
+      "template": "forge/service.IPlatformHelper.ft",
+      "destination": "forge/src/main/resources/META-INF/services/${MAIN_CLASS.packageName}.platform.services.IPlatformHelper"
+    },
+    {
+      "template": "forge/forge.mixins.json.ft",
+      "destination": "forge/src/main/resources/${MOD_ID}.forge.mixins.json"
+    },
+    {
+      "template": "forge/mods.toml.ft",
+      "destination": "forge/src/main/resources/META-INF/mods.toml"
+    },
+    {
+      "template": "neoforge/build.gradle.ft",
+      "destination": "neoforge/build.gradle"
+    },
+    {
+      "template": "neoforge/ExampleMod.java.ft",
+      "destination": "neoforge/src/main/java/${MAIN_CLASS.path}.java"
+    },
+    {
+      "template": "neoforge/NeoForgePlatformHelper.java.ft",
+      "destination": "neoforge/src/main/java/${MAIN_CLASS.packagePath}/platform/NeoForgePlatformHelper.java"
+    },
+    {
+      "template": "neoforge/MixinTitleScreen.java.ft",
+      "destination": "neoforge/src/main/java/${MAIN_CLASS.packagePath}/mixin/MixinTitleScreen.java"
+    },
+    {
+      "template": "neoforge/service.IPlatformHelper.ft",
+      "destination": "neoforge/src/main/resources/META-INF/services/${MAIN_CLASS.packageName}.platform.services.IPlatformHelper"
+    },
+    {
+      "template": "neoforge/neoforge.mixins.json.ft",
+      "destination": "neoforge/src/main/resources/${MOD_ID}.neoforge.mixins.json"
+    },
+    {
+      "template": "neoforge/neoforge.mods.toml.ft",
+      "destination": "neoforge/src/main/resources/META-INF/neoforge.mods.toml"
+    }
+  ],
+  "finalizers": [
+    {
+      "type": "import_gradle_project"
+    },
+    {
+      "type": "run_gradle_tasks",
+      "tasks": ["wrapper", "genIntellijRuns"]
+    },
+    {
+      "type": "git_add_all",
+      "condition": "$USE_GIT"
+    }
+  ]
+}
