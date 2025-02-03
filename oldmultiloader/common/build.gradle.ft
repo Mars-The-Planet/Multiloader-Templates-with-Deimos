@@ -14,7 +14,7 @@ minecraft {
 dependencies {
     compileOnly group:'org.spongepowered', name:'mixin', version:'0.8.5'
 
-    implementation "maven.modrinth:deimos:${project.minecraft_version}-${project.deimos_version}-forge"
+    implementation "maven.modrinth:deimos:${project.minecraft_version}-forge-${project.deimos_version}"
 }
 
 configurations {
