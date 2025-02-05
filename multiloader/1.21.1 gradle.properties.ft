@@ -5,7 +5,7 @@
 version=${BUILD_COORDS.version}
 group=${BUILD_COORDS.groupId}
 java_version=21
-deimos_version=2
+deimos_version=2.1
 
 # Common
 mod_name=${MOD_NAME}
