@@ -1,2 +1,2 @@
 # Multiloader Templates with Deimos Dependency
-This is a template for [Minecraft Development IntelliJ plugin](https://plugins.jetbrains.com/plugin/8327-minecraft-development). It is based on the build in multiloader template. The diffrence be I made it to speed up the development of my Minecraft mods but feel free to download it or edited. 
+This is a template for [Minecraft Development IntelliJ plugin](https://plugins.jetbrains.com/plugin/8327-minecraft-development). It is based on the built-in multiloader template. The main differences between these two are that this template contains Deimos as a dependency, it has no loader-specific mixins, and no debug prints. I made it to speed up the development of my Minecraft mods but feel free to download it or edited. 
