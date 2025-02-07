@@ -28,8 +28,6 @@ You can set it up easily in IntelliJ by adding a remote repository in Minecraft 
 
 ![Minecraft Development Settings](https://i.imgur.com/o0iyQiz.png)  
 
-![Minecraft Development Settings](https://i.imgur.com/o0iyQiz.png)
-
 ## How to change Minecraft versions
 
 If you want to make a mod for 1.20.6 and further, or you just want to update a mod past 1.20.4 use the 1.21.1 template to create a new mod and then edit `gradle.properties` values like this:
