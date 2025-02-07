@@ -11,13 +11,13 @@ I created this template to speed up my own Minecraft mod development, but feel f
   - One for Minecraft 1.20.4, designed for older versions with support for only Fabric and Forge  
 
 - **Deimos Dependency:**  
-  Includes [Deimos](https://github.com/Mars-The-Planet/Deimos), a configuration and dynamic recipe generation library, as a preconfigured dependency.  
+  Includes [Deimos](https://github.com/Mars-The-Planet/Deimos), a configuration and dynamic recipe generation library, as a preconfigured dependency
 
 - **Cleaner Code:**  
-  No debug prints, generic comments, or default loader-specific mixins.  
+  No debug prints, generic comments, or default loader-specific mixins
 
 - **Additional Configuration:**  
-  Added a `homepage` option in `gradle.properties`.  
+  Added a `homepage` option in `gradle.properties`
 
 ## How to set it up
 You can set it up easily in IntelliJ by adding a remote repository in Minecraft Development Settings. Follow these steps:  
