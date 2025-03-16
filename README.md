@@ -7,8 +7,11 @@ I created this template to speed up my own Minecraft mod development, but feel f
 ## Advantages Over the Built-in Template  
 
 - **Two Template Options:**  
-  - One for Minecraft 1.21.1, updated from 1.21 in the default template  
-  - One for Minecraft 1.20.4, designed for older versions with support for only Fabric and Forge  
+  - `multiloader` for Minecraft 1.21.1, based on the default 1.21 template (intended for 1.21+)
+  - `oldmultiloader` for Minecraft 1.20.4, designed for older versions with support for only Fabric and Forge (intended for 1.18-1.20.4)
+
+- **Mod Menu Dependency:**  
+  Includes [Mod Menu](https://modrinth.com/mod/modmenu), a Fabric mod that lets you view and configure your mods in-game, as a preconfigured dependency
 
 - **Deimos Dependency:**  
   Includes [Deimos](https://github.com/Mars-The-Planet/Deimos), a configuration and dynamic recipe generation library, as a preconfigured dependency
@@ -30,7 +33,7 @@ You can set it up easily in IntelliJ by adding a remote repository in Minecraft 
 
 ## How to change Minecraft versions
 
-If you want to make a mod for 1.20.6 and further, or you just want to update a mod past 1.20.4 use the 1.21.1 template to create a new mod and then edit `gradle.properties` values like this:
+For 1.20.6 and onwards, use `multiloader`; for 1.18 to 1.20.4, use `oldmultiloader`. To change Minecraft versions, you will need to edit `gradle.properties` values like this:
 ### For 1.21.4
 **Note:** You’ll also need to change `data()` to `clientData()` in `build.gradle (:neoforge)`.  
 ```
@@ -68,8 +71,8 @@ forge_loader_version_range=[53,)
 neoforge_version=21.3.36-beta
 neoforge_loader_version_range=[4,)
 ```
-### For 1.21.1
-**Note:** This is what the mod will be set if you use the `multiloader` template
+### For 1.21-1.21.1
+**Note:** This is what the mod will be set to if you use the `multiloader` template
 ```
 minecraft_version=1.21.1
 modmenu_version=11.0.3
@@ -87,7 +90,7 @@ forge_loader_version_range=[51,)
 neoforge_version=21.1.80
 neoforge_loader_version_range=[4,)
 ```
-### For 1.20.6
+### For 1.20.5-1.20.6
 ```
 minecraft_version=1.20.6
 modmenu_version=10.0.0
@@ -104,4 +107,77 @@ forge_loader_version_range=[50,)
 # NeoForge
 neoforge_version=20.6.122
 neoforge_loader_version_range=[2,)
+```
+### For 1.20.3-1.20.4
+**Note:** This is what the mod will be set to if you use the `oldmultiloader` template
+```
+minecraft_version=1.20.4
+minecraft_version_range=[1.20.3, 1.21)
+modmenu_version=9.0.0
+# Fabric
+fabric_version=0.97.2+1.20.4
+fabric_loader_version=0.16.9
+# Forge
+forge_version=49.0.19
+forge_loader_version_range=[49,)
+```
+### For 1.20.2
+```
+minecraft_version=1.20.2
+modmenu_version=8.0.1
+minecraft_version_range=[1.20.2, 1.21)
+# Fabric
+fabric_version=0.91.6+1.20.2
+fabric_loader_version=0.16.9
+# Forge
+forge_version=48.0.49
+forge_loader_version_range=[48,)
+```
+### For 1.20-1.20.1
+```
+minecraft_version=1.20.1
+modmenu_version=7.2.2
+minecraft_version_range=[1.20, 1.21)
+# Fabric
+fabric_version=0.92.2+1.20.1
+fabric_loader_version=0.16.9
+# Forge
+forge_version=47.2.30
+forge_loader_version_range=[46,)
+```
+### For 1.19.4
+```
+minecraft_version=1.19.4
+modmenu_version=6.3.1
+minecraft_version_range=[1.19.4, 1.20)
+# Fabric
+fabric_version=0.87.2+1.19.4
+fabric_loader_version=0.16.9
+# Forge
+forge_version=45.3.15
+forge_loader_version_range=[45,)
+```
+### For 1.19-1.19.2
+```
+minecraft_version=1.19.2
+modmenu_version=4.2.0-beta.2
+minecraft_version_range=[1.19, 1.20)
+# Fabric
+fabric_version=0.77.0+1.19.2
+fabric_loader_version=0.16.9
+# Forge
+forge_version=43.4.12
+forge_loader_version_range=[41,)
+```
+### For 1.18 - 1.18.2
+```
+minecraft_version=1.18.2
+modmenu_version=3.2.5
+minecraft_version_range=[1.18, 1.19)
+# Fabric
+fabric_version=0.77.0+1.18.2
+fabric_loader_version=0.16.9
+# Forge
+forge_version=40.3.0
+forge_loader_version_range=[38,)
 ```
