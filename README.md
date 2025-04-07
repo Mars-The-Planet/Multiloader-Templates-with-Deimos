@@ -34,6 +34,24 @@ You can set it up easily in IntelliJ by adding a remote repository in Minecraft 
 ## How to change Minecraft versions
 
 For 1.20.6 and onwards, use `multiloader`; for 1.18 to 1.20.4, use `oldmultiloader`. To change Minecraft versions, you will need to edit `gradle.properties` values like this:
+### For 1.21.5
+```
+minecraft_version=1.21.5
+modmenu_version=14.0.0-rc.2
+minecraft_version_range=[1.21.5, 1.22)
+neo_form_version=1.21.5-20250325.162830
+parchment_minecraft=1.21.4
+parchment_version=2025.03.23
+# Fabric
+fabric_version=0.119.9+1.21.5
+fabric_loader_version=0.16.12
+# Forge
+forge_version=55.0.4
+forge_loader_version_range=[55,)
+# NeoForge
+neoforge_version=21.5.28-beta
+neoforge_loader_version_range=[4,)
+```
 ### For 1.21.4
 **Note:** You’ll also need to change `data()` to `clientData()` in `build.gradle (:neoforge)`.  
 ```
@@ -169,7 +187,7 @@ fabric_loader_version=0.16.9
 forge_version=43.4.12
 forge_loader_version_range=[41,)
 ```
-### For 1.18 - 1.18.2
+### For 1.18-1.18.2
 ```
 minecraft_version=1.18.2
 modmenu_version=3.2.5
