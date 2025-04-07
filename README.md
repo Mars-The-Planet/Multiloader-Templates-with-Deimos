@@ -53,7 +53,7 @@ neoforge_version=21.5.28-beta
 neoforge_loader_version_range=[4,)
 ```
 ### For 1.21.4
-**Note:** You’ll also need to change `data()` to `clientData()` in `build.gradle (:neoforge)`.  
+**Note for 1.21.4+** You’ll also need to change `data()` to `clientData()` in `build.gradle (:neoforge)`.  
 ```
 minecraft_version=1.21.4
 modmenu_version=13.0.0-beta.1
