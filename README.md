@@ -8,7 +8,13 @@ I created this template to speed up my own Minecraft mod development, but feel f
 
 - **Two Template Options:**  
   - `multiloader` for Minecraft 1.21.1, based on the default 1.21 template (intended for 1.21+)
-  - `oldmultiloader` for Minecraft 1.20.4, designed for older versions with support for only Fabric and Forge (intended for 1.18-1.20.4)
+  - `oldmultiloader` for Minecraft 1.20.4, designed for older versions with support for only Fabric and Forge (intended for 1.18 - 1.20.4)
+
+- **Unified multi-loader build system:**  
+  This template includes a .bat script that builds every loader and puts these new jars into one folder. To make it work, you need to create three new Environment Variables.
+  - `Java_17` - Path to your Java 17 JDK
+  - `Java_21` - Path to your Java 21 JDK
+  - `BuildsOutput` - Path to the folder where the final JARs should be placed
 
 - **Mod Menu Dependency:**  
   Includes [Mod Menu](https://modrinth.com/mod/modmenu), a Fabric mod that lets you view and configure your mods in-game, as a preconfigured dependency
