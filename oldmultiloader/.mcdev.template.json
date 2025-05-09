@@ -105,6 +105,10 @@
       "destination": "build.gradle"
     },
     {
+      "template": "build_all.bat.ft",
+      "destination": "build_all.bat"
+    },
+    {
       "template": "settings.gradle.ft",
       "destination": "settings.gradle"
     },
