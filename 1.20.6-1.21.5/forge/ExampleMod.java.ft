@@ -6,6 +6,5 @@ import net.minecraftforge.fml.common.Mod;
 public class ${MAIN_CLASS.className} {
     public ${MAIN_CLASS.className}() {
         CommonClass.init();
-
     }
 }

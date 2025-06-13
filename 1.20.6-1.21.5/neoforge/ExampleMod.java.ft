@@ -1,6 +1,5 @@
 package ${MAIN_CLASS.packageName};
 
-
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 
