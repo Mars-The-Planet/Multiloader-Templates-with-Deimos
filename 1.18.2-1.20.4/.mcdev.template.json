@@ -161,6 +161,10 @@
       "destination": "common/src/main/resources/pack.mcmeta"
     },
     {
+      "template": "common/ExampleModConfig.java.ft",
+      "destination": "common/src/main/java/${MAIN_CLASS.path}Config.java"
+    },
+    {
       "template": "fabric/build.gradle.ft",
       "destination": "fabric/build.gradle"
     },
