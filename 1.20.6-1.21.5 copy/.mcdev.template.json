@@ -76,12 +76,12 @@
       "name": "JAVA_VERSION",
       "type": "integer",
       "order": 20,
-      "default": 17,
+      "default": 21,
       "visible": false,
       "derives": {
         "parents": ["MC_VERSION"],
         "method": "recommendJavaVersionForMcVersion",
-        "default": 17
+        "default": 21
       }
     },
     {

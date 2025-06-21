@@ -23,7 +23,7 @@ neoForge {
             client()
         }
         data {
-            #if ($VERSIONS.minecraft.compareTo($mcver.MC1_21_4) >= 0)
+            #if ($MC_VERSION.minecraft.compareTo($mcver.MC1_21_4) >= 0)
             // in 1.21.3 and bellow use data()
             clientData()
             #else
