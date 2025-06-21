@@ -1,0 +1,35 @@
+# Important Notes:
+# Every field you add must be added to the root build.gradle expandProps map.
+
+# Project
+version=${BUILD_COORDS.version}
+group=${BUILD_COORDS.groupId}
+java_version=21
+deimos_version=2.2
+
+# Common
+mod_name=${MOD_NAME}
+mod_author=${AUTHORS}
+mod_id=${MOD_ID}
+license=${LICENSE.id}
+homepage=${WEBSITE}
+description=${DESCRIPTION}
+minecraft_version=1.20.6
+modmenu_version=10.0.0
+minecraft_version_range=[1.20.5, 1.21)
+neo_form_version=1.20.6-20240627.102356
+parchment_minecraft=1.20.6
+parchment_version=2024.06.16
+# Fabric
+fabric_version=0.100.8+1.20.6
+fabric_loader_version=0.16.9
+# Forge
+forge_version=50.1.0
+forge_loader_version_range=[50,)
+# NeoForge
+neoforge_version=20.6.122
+neoforge_loader_version_range=[2,)
+
+# Gradle
+org.gradle.jvmargs=-Xmx3G
+org.gradle.daemon=false
