@@ -23,8 +23,13 @@ neoForge {
             client()
         }
         data {
-		//in 1.21.4+ use clientData()
+            #if( $MC_VERSION.minecraft.compareTo($mcver.MC_1_21_4) < 0 )
+            // since 1.21.4 use clientData()
             data()
+            #else
+            // bellow 1.21.4 use data()
+            clientData()
+            #end
         }
         server {
             server()

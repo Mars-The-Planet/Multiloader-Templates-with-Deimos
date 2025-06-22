@@ -1,9 +1,0 @@
-package ${MAIN_CLASS.packageName};
-
-import com.mars.deimos.config.DeimosConfig;
-
-public class CommonClass {
-    public static void init() {
-        DeimosConfig.init(Constants.MOD_ID, ${MAIN_CLASS.className}Config.class);
-    }
-}
