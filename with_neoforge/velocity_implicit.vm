@@ -1,3 +1,5 @@
 #* @implicitly included *#
 
+#* @vtlvariable name="mcver" type="com.demonwav.mcdev.util.MinecraftVersions" *#
+
 #* @vtlvariable name="MC_VERSION" type="com.demonwav.mcdev.util.SemanticVersion" *#
