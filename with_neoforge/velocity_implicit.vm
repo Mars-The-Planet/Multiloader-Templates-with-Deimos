@@ -1,0 +1,3 @@
+#* @implicitly included *#
+
+#* @vtlvariable name="MC_VERSION" type="com.demonwav.mcdev.util.SemanticVersion" *#
